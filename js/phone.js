@@ -12,6 +12,18 @@ displayPhones = phones =>{
     const phoneContainer = document.getElementById("phone-container");
     // clear the phone container before adding new cards
     phoneContainer.textContent = '';
+    // display show all link if there are more than 12 phones
+    const extraPhoneContainer = document.getElementById("link-container");
+
+    if(phones.length > 12){
+    extraPhoneContainer.classList.remove("hidden");
+    }
+    else{
+        extraPhoneContainer.classList.add("hidden")
+    }
+    // display first 12 phones
+
+    phones = phones.slice(0,12);
 
     phones.forEach(phone => {
        console.log(phone); 
